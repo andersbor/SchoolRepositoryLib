@@ -20,7 +20,6 @@ namespace SchoolLib.Tests
             Teacher nullName = new Teacher() { Id = 1, Name = null, Salary = 0 };
             Assert.ThrowsException<ArgumentNullException>(
                 () => nullName.ValidateName());
-
         }
 
         [TestMethod()]
