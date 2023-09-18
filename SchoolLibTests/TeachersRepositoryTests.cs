@@ -12,7 +12,7 @@ namespace SchoolLib.Tests
     public class TeachersRepositoryTests
     {
         private static ITeachersRepository teachersRepository;
-        private static bool useDatabase = true;
+        private static bool useDatabase = false;
 
         [ClassInitialize]
         public static void InitOnce(TestContext context)

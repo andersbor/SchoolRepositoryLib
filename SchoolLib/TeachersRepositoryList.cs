@@ -37,9 +37,11 @@ namespace SchoolLib
                 result = orderBy switch
                 {
                     "name" => result.OrderBy(teacher => teacher.Name),
-                    "namedesc" => result.OrderByDescending(teacher => teacher.Name),
+                    "name_asc" => result.OrderBy(teacher => teacher.Name),
+                    "name_desc" => result.OrderByDescending(teacher => teacher.Name),
                     "salary" => result.OrderBy(teacher => teacher.Salary),
-                    "salarydesc" => result.OrderByDescending(teacher => teacher.Salary),
+                    "salary_asc" => result.OrderBy(teacher => teacher.Salary),
+                    "salary_desc" => result.OrderByDescending(teacher => teacher.Salary),
                     _ => throw new ArgumentException("Invalid orderBy value")
                 };
             }
@@ -74,7 +76,7 @@ namespace SchoolLib
             Teacher? teacher = GetById(id);
             if (teacher == null) return null;
             teacher.Name = data.Name;
-            teacher.Salary = data.Salary;   
+            teacher.Salary = data.Salary;
             return teacher;
         }
     }
